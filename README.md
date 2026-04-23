@@ -4,6 +4,8 @@ An interactive, hand-controlled gallery of Claude Monet's paintings. Control the
 
 Built with React, Vite, and MediaPipe Hands.
 
+<img width="646" height="242" alt="Paintings" src="https://github.com/user-attachments/assets/304dc59e-c89f-4731-81fa-a264b733ef01" />
+
 ---
 
 ## Gestures
