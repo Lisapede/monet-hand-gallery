@@ -1,0 +1,51 @@
+.desktop {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/*
+  Wallpaper: Giverny garden at dawn
+  — soft cerulean sky upper-left, warm gold sunrise right,
+    garden green lower, mauve shadows mid-left
+*/
+.desktop-wallpaper {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 10% 15%,  #c8dce8 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at 88% 12%,  #e8d8a0 0%, transparent 50%),
+    radial-gradient(ellipse 60% 55% at 15% 85%,  #c0d4b8 0%, transparent 50%),
+    radial-gradient(ellipse 50% 45% at 75% 80%,  #d0c8e0 0%, transparent 50%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, #d4e0e8 0%, #c8d4e0 100%);
+  background-color: #ccd8e4;
+}
+
+/* Dappled light through leaves */
+.desktop-wallpaper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 30% 20% at 40% 30%, rgba(212,160,64,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 25% 30% at 20% 70%, rgba(90,120,80,0.1)  0%, transparent 55%),
+    radial-gradient(ellipse 35% 25% at 70% 55%, rgba(152,128,184,0.1) 0%, transparent 55%);
+}
+
+/* Impressionist canvas grain */
+.desktop-wallpaper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.window-container {
+  position: absolute;
+  inset: 28px;
+  display: flex;
+  align-items: stretch;
+}

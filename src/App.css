@@ -1,0 +1,92 @@
+.app-window {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Primed linen canvas — the surface Monet painted on */
+  background: linear-gradient(165deg, #f8f3ea 0%, #f2ebe0 50%, #ede4d5 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(90,128,80,0.18),
+    0 0 0 3px rgba(245,240,230,0.8),
+    0 0 0 4px rgba(90,128,80,0.08),
+    0 40px 100px rgba(46,56,40,0.22),
+    0 10px 28px rgba(46,56,40,0.12);
+}
+
+/* ── Title bar — morning light on linen ── */
+.title-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 96px;
+  padding: 0 32px;
+  background: linear-gradient(180deg, #f8f4ea 0%, #f0e9d8 100%);
+  border-bottom: 1px solid rgba(90,128,80,0.12);
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Signature shimmer — pond blue → garden green → gold → mauve */
+.title-bar::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent      0%,
+    #7aa0c4          12%,
+    #8aaa72          32%,
+    #d4a040          52%,
+    #9880b8          72%,
+    #7aa0c4          88%,
+    transparent      100%);
+  opacity: 0.55;
+}
+
+.title-portrait {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(90,128,80,0.3);
+  box-shadow:
+    0 0 0 3px rgba(245,240,230,0.9),
+    0 0 0 4px rgba(212,160,64,0.2),
+    0 3px 12px rgba(46,56,40,0.15);
+  flex-shrink: 0;
+}
+
+.title-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  color: #2e3828;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.title-sub {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(90,128,80,0.75);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* ── Body ── */
+.app-body {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}

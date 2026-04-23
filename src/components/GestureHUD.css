@@ -1,0 +1,85 @@
+.gesture-hud {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.gesture-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px 7px 11px;
+  border-radius: 5px;
+  background: rgba(245,242,232,0.88);
+  border: 1px solid rgba(90,128,80,0.2);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 5px rgba(46,56,40,0.08);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.gesture-item.active {
+  background: rgba(248,246,236,0.97);
+  border-color: rgba(90,128,80,0.5);
+  box-shadow: 0 2px 10px rgba(90,128,80,0.16);
+}
+
+.gesture-icon {
+  font-size: 13px;
+  color: rgba(90,128,80,0.55);
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.gesture-item.active .gesture-icon {
+  color: var(--accent, #5a8050);
+}
+
+.gesture-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.gesture-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2e3828;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.gesture-desc {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(46,56,40,0.55);
+  letter-spacing: 0.03em;
+}
+
+.gesture-item.active .gesture-label { color: #1a2414; }
+.gesture-item.active .gesture-desc  { color: rgba(90,128,80,0.85); }
+
+.gesture-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  animation: ping 0.4s ease-out forwards;
+  background: rgba(90,128,80,0.1);
+  pointer-events: none;
+}
+
+@keyframes ping {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
