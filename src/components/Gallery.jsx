@@ -3,8 +3,8 @@ import { ALL_PAINTINGS, INITIAL_COUNT } from '../data/paintings'
 import './Gallery.css'
 
 const MODES = { CAROUSEL: 'carousel', EXPAND: 'expand', GRID: 'grid' }
-const FRICTION = 0.96
-const SPIN_SENSITIVITY = 2
+const FRICTION = 0.88
+const SPIN_SENSITIVITY = 1
 
 const GESTURE_TO_MODE = {
   grid:      MODES.GRID,
